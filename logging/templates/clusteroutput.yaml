@@ -1,0 +1,17 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterOutput
+metadata:
+  name: localsplunk
+  namespace: cattle-logging-system
+spec:
+  splunkHec:
+    hec_host: 137.184.154.240
+    hec_port: 30342
+    hec_token:
+      valueFrom:
+        secretKeyRef:
+          key: SplunkHecToken
+          name: splunk
+    index: main
+    insecure_ssl: true
+    source: {{ .Values.source }}
