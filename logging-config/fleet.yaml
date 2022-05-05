@@ -1,0 +1,4 @@
+defaultNamespace: rancher-logging
+helm:
+  values: 
+    source: global.fleet.clusterLabels.management.cattle.io/cluster-display-name
